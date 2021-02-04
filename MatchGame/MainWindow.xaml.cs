@@ -39,10 +39,7 @@ namespace MatchGame
             if(matchesFound == 8)
             {
                 timer.Stop();
-                foreach (TextBlock textBlock in mainGrid.Children.OfType<TextBlock>())
-                {
-                    textBlock.Visibility = Visibility.Visible;
-                }
+                
                
                 timeTextBlock.Text = timeTextBlock.Text + "- Play again?";
                 
@@ -67,6 +64,11 @@ namespace MatchGame
             };
 
             Random random = new Random();
+
+            foreach (TextBlock textBlock in mainGrid.Children.OfType<TextBlock>())
+            {
+                textBlock.Visibility = Visibility.Visible;
+            }
 
             foreach (TextBlock textBlock in mainGrid.Children.OfType<TextBlock>())
             {

@@ -34,9 +34,9 @@ namespace MatchGame
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            tenthsOfSecondsElapsed++;
+            tenthsOfSecondsElapsed--;
             timeTextBlock.Text = (tenthsOfSecondsElapsed / 10F).ToString("0.0s");
-            if(matchesFound == 8)
+            if(matchesFound == 8 || tenthsOfSecondsElapsed == 0)
             {
                 timer.Stop();
                 
@@ -82,7 +82,7 @@ namespace MatchGame
             }
 
             timer.Start();
-            tenthsOfSecondsElapsed = 0;
+            tenthsOfSecondsElapsed = 200;
             matchesFound = 0;
         }
 
